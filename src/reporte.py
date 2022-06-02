@@ -8,6 +8,13 @@ st.title('Análisis Exploratorio de Datos')
 
 df = pd.read_csv('./data/ClusterFinal.csv', sep=";")
 
+proces_x_precio_normal = df.groupby('Procesador')['Precio Normal'].count().sort_values(ascending=False)
+df_proces = pd.DataFrame(proces_x_precio_normal)
+proces_x_precio_normal_cambio = df_proces.rename(columns={'Precio Normal': 'Cantidad de Procesador'})
+proces_x_precio_normal_fig = px.bar(proces_x_precio_normal_cambio, x= proces_x_precio_normal_cambio.index, y='Cantidad de Procesador',template="plotly_dark",
+                             height=400, width=800, text_auto='.2s',color=proces_x_precio_normal_cambio.index)
+st.write(proces_x_precio_normal_fig , use_container_width = True)
+
 
 marca_x_precio_normal = df.groupby('Marca')['Precio Normal'].count().sort_values(ascending=False)
 df_marca = pd.DataFrame(marca_x_precio_normal)
