@@ -39,6 +39,6 @@ df_filtro_clust_2 = df[df.cluster_predicted>2]
 df_filtro_2 = df_filtro_clust_2.rename(columns={'cluster_predicted': 'Número de Clusters'})
 
 fig2 = px.box(df_filtro_2, x = "Número de Clusters", y="Precio Online",color="Tienda",
-              title="Distribución de precios online por cluster y tienda departamental",
+              title="Distribución de precios online por cluster y tienda",
              height=400, width=900, points="all",template="plotly_dark") 
 st.write(fig2 , use_container_width = True)
