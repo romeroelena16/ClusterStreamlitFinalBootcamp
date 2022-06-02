@@ -22,3 +22,23 @@ fig = px.box(df, x = "Tienda", y="Precio Online",color="Tienda",
              height=400, width=800, points="all",template="plotly_dark") 
 
 st.write(fig , use_container_width = True)
+
+
+st.title('Análisis para cluster')
+
+
+df_filtro_clust_1 = df[df.cluster_predicted<=2]
+df_filtro_1 = df_filtro_clust_1.rename(columns={'cluster_predicted': 'Número de Clusters'})
+
+fig1 = px.box(df_filtro_1, x = "Número de Clusters", y="Precio Online",color="Tienda",
+              title="Distribución de precios online por cluster y tienda departamental",
+             height=400, width=900, points="all",template="plotly_dark") 
+st.write(fig1 , use_container_width = True)
+
+df_filtro_clust_2 = df[df.cluster_predicted>2]
+df_filtro_2 = df_filtro_clust_2.rename(columns={'cluster_predicted': 'Número de Clusters'})
+
+fig2 = px.box(df_filtro_2, x = "Número de Clusters", y="Precio Online",color="Tienda",
+              title="Distribución de precios online por cluster y tienda departamental",
+             height=400, width=900, points="all",template="plotly_dark") 
+st.write(fig2 , use_container_width = True)
