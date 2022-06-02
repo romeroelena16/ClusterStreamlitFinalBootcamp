@@ -6,7 +6,7 @@ import streamlit as st
 st.title('Análisis Exploratorio de Datos')
 
 
-df = pd.read_csv('./data/ClusterFinal.csv', sep=";")
+df = pd.read_csv('../data/ClusterFinal.csv', sep=";")
 
 
 marca_x_precio_normal = df.groupby('Marca')['Precio Normal'].count().sort_values(ascending=False)
