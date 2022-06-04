@@ -3,7 +3,7 @@
 De los Datos extraidos por Scrapy de las plataformas Ecommerce
 
 1. Combinación de los Datos de las 3 Plataformas ( Oeschle, Hiraoka, Plazavea)
-2. Se realizo un análisis EDA
+2. Análisis EDA
 3. Algoritmo de clustering K-modes
 4. Resultados de clustering en Streamlit
 
