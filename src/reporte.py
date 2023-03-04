@@ -6,10 +6,10 @@ import numpy as np
 st.title('Análisis Exploratorio de Datos')
 
 
-df = pd.read_csv('../data/ClusterFinal.csv', sep=";")
+df = pd.read_csv('./data/ClusterFinal.csv', sep=";")
 st.write(df)
 
-df2 = pd.read_excel('../data/rep_x_area.xlsx')
+df2 = pd.read_excel('./data/rep_x_area.xlsx')
 st.write(df2)
 
 proces_x_precio_normal = df.groupby('Procesador')['Precio Normal'].count().sort_values(ascending=False)
