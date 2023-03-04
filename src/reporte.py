@@ -7,6 +7,7 @@ st.title('Análisis Exploratorio de Datos')
 
 
 df = pd.read_csv('../data/ClusterFinal.csv', sep=";")
+st.write(df)
 
 df2 = pd.read_excel('../data/rep_x_area.xlsx')
 st.write(df2)
